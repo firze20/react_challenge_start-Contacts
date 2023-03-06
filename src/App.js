@@ -4,6 +4,10 @@ import { Switch, Route, Redirect, NavLink } from "react-router-dom";
 import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage";
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 
+import { v4 as uuidv4 } from 'uuid';
+
+
+
 function App() {
   /*
   Define state variables for 
@@ -14,22 +18,26 @@ function App() {
     {
       name: 'Test',
       phone: '961540982',
-      mail: 'test@gmail.com'
+      mail: 'test@gmail.com',
+      key: uuidv4()
     },
     {
       name: 'Test2',
       phone: '916859231',
-      mail: 'test2@gmail.com'
+      mail: 'test2@gmail.com',
+      key: uuidv4()
     },
     {
       name: 'Michael',
       phone: '913325612',
-      mail: 'michaelscott@gmail.com'
+      mail: 'michaelscott@gmail.com',
+      key: uuidv4()
     },
     {
       name: 'Shawn',
       phone: '9143275612',
-      mail: 'shawn@gmail.com'
+      mail: 'shawn@gmail.com',
+      key: uuidv4()
     }
   ]);
   const [appointments, setAppointments] = useState([]);
@@ -37,6 +45,7 @@ function App() {
   const ROUTES = {
     CONTACTS: "/contacts",
     APPOINTMENTS: "/appointments",
+    CONTACT_FORMS: "/contacts/addContact"
   };
 
   /*
@@ -51,6 +60,7 @@ function App() {
         name,
         phone,
         email,
+        key: uuidv4()
       },
     ]);
   };
@@ -63,6 +73,7 @@ function App() {
         contact,
         date,
         time,
+        key: uuidv4()
       },
     ]);
   };

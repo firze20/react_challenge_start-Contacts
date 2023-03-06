@@ -54,7 +54,7 @@ export const ContactsPage = (props) => {
           <ol start={1}>
             {props.contacts.map((contact) => {
               return (
-                <li>
+                <li key={contact.key}>
                   <span>{contact.name}</span>
                   <span>
                     phone: {contact.phone}
