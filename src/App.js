@@ -20,6 +20,16 @@ function App() {
       name: 'Test2',
       phone: '916859231',
       mail: 'test2@gmail.com'
+    },
+    {
+      name: 'Michael',
+      phone: '913325612',
+      mail: 'michaelscott@gmail.com'
+    },
+    {
+      name: 'Shawn',
+      phone: '9143275612',
+      mail: 'shawn@gmail.com'
     }
   ]);
   const [appointments, setAppointments] = useState([]);

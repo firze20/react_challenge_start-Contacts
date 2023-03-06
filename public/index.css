@@ -101,6 +101,7 @@ ol {
 
 li {
 	break-inside: avoid;
+  margin: 10px;
 }
 
 ::marker {
