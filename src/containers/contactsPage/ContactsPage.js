@@ -33,13 +33,14 @@ export const ContactsPage = (props) => {
 
   useEffect(() => {
     const checkForDuplicate = (contact) => {
-      const duplicate = props.contacts.some((element) => element.name === contact);
-      return duplicate
-    }
+      const duplicate = props.contacts.some(
+        (element) => element.name === contact
+      );
+      return duplicate;
+    };
 
     checkForDuplicate(name);
-  }, [name])
-
+  }, [name]);
 
   return (
     <div>
@@ -49,11 +50,23 @@ export const ContactsPage = (props) => {
       <hr />
       <section>
         <h2>Contacts</h2>
-        <ul>
-          {props.contacts.map((contact) => {
-            return <li>{contact.name}</li>
-          })}
-        </ul>
+        {props.contacts.length ? (
+          <ol start={1}>
+            {props.contacts.map((contact) => {
+              return (
+                <li>
+                  <span>{contact.name}</span>
+                  <span>
+                    phone: {contact.phone}
+                  </span>
+                  <span>
+                    email: {contact.mail}
+                  </span>
+                </li>
+              );
+            })}
+          </ol>
+        ) : null}
       </section>
     </div>
   );

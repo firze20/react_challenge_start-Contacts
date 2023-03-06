@@ -80,3 +80,49 @@ select {
 .tile-container {
   margin-bottom: 20px;
 }
+
+ol {
+	padding: 1.5rem 1.5rem 1.5rem 4em;
+	border: 0.3rem solid rgb(12, 19, 140);
+	columns: 25rem;
+	column-gap: 7rem;
+	column-rule: 4px dotted rgb(12, 19, 140);
+	border-radius: 0.5rem;
+}
+
+ol {
+	padding: 1.5rem 1.5rem 1.5rem 4em;
+	border: 0.3rem solid rgb(12, 19, 224);
+	columns: 25rem;
+	column-gap: 7rem;
+	column-rule: 4px dotted rgb(12, 19, 224);
+	border-radius: 0.5rem;
+}
+
+li {
+	break-inside: avoid;
+}
+
+::marker {
+	content: counters(list-item, '') ': ';
+	font-weight: 700;
+	font-size: 1.5em;
+	color: rgb(4, 29, 90);
+}
+
+li span {
+	display: block;
+}
+
+li span:first-child {
+	font-size: 1.5em;
+}
+
+li span:last-child {
+	font-style: italic;
+}
+
+.divider {
+	min-height: 6rem;
+	background: lavender;
+}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 export const AppointmentsPage = (props) => {
   /*
@@ -14,7 +14,6 @@ export const AppointmentsPage = (props) => {
     /*
     Add contact info and clear data  
     */
-   
   };
 
   return (
@@ -25,6 +24,13 @@ export const AppointmentsPage = (props) => {
       <hr />
       <section>
         <h2>Appointments</h2>
+        {props.appointments.length ? (
+          <ol start={1}>
+            {props.appointments.map((appointment) => {
+              return <li>{appointment.title}</li>;
+            })}
+          </ol>
+        ) : null}
       </section>
     </div>
   );
@@ -33,4 +39,4 @@ export const AppointmentsPage = (props) => {
 AppointmentsPage.propTypes = {
   appointments: PropTypes.array.isRequired,
   addAppointment: PropTypes.func.isRequired,
-}
+};
