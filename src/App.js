@@ -6,8 +6,6 @@ import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 
 import { v4 as uuidv4 } from 'uuid';
 
-
-
 function App() {
   /*
   Define state variables for 

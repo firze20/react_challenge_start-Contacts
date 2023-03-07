@@ -36,7 +36,7 @@ export const ContactsPage = (props) => {
       const duplicate = props.contacts.some(
         (element) => element.name === contact
       );
-      return duplicate;
+      setDuplicate(duplicate);
     };
 
     checkForDuplicate(name);
@@ -46,27 +46,22 @@ export const ContactsPage = (props) => {
     <div>
       <section>
         <h2>Add Contact</h2>
+        <ContactForm
+          name={name}
+          setName={setName}
+          phone={phone}
+          setPhone={setPhone}
+          email={email}
+          setEmail={setEmail}
+          handleSubmit={handleSubmit}
+          duplicate={duplicate}
+          setDuplicate={setDuplicate}
+        />
       </section>
       <hr />
       <section>
         <h2>Contacts</h2>
-        {props.contacts.length ? (
-          <ol start={1}>
-            {props.contacts.map((contact) => {
-              return (
-                <li key={contact.key}>
-                  <span>{contact.name}</span>
-                  <span>
-                    phone: {contact.phone}
-                  </span>
-                  <span>
-                    email: {contact.mail}
-                  </span>
-                </li>
-              );
-            })}
-          </ol>
-        ) : null}
+        {props.contacts.length ? <TileList contacts={props.contacts} /> : null}
       </section>
     </div>
   );
