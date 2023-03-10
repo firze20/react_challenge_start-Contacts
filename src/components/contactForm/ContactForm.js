@@ -7,11 +7,11 @@ export const ContactForm = ({
   setPhone,
   email,
   setEmail,
-  handleSubmit,
-  duplicate,
-  setDuplicate,
+  handleSubmit
 }) => {
-  const handleNameChange = (e) => {};
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
 
   const handlePhoneChange = (e) => {
     if (e.target.value.match(/9[1236][0-9]{7}|2[1-9][0-9]{7}/) != null) {
@@ -21,7 +21,7 @@ export const ContactForm = ({
 
   const handleEmailChange = (e) => {
     if (
-      e.target.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/) !=
+      e.target.value.match(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/) !=
       null
     ) {
       setEmail(e.target.value);
@@ -32,7 +32,7 @@ export const ContactForm = ({
     <div>
       <form onSubmit={handleSubmit} id={"form"}>
         <label htmlFor="name">Name:</label>
-        <input type={"text"} id="name" onChange={setName} name={name} />
+        <input type={"text"} id="name" onChange={handleNameChange} name={name} />
         <label htmlFor="phone">Phone:</label>
         <input
           type={"number"}
@@ -43,7 +43,6 @@ export const ContactForm = ({
         <label htmlFor="email">Email:</label>
         <input
           type={"text"}
-          pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/"
           id="email"
           onChange={handleEmailChange}
           name={email}
